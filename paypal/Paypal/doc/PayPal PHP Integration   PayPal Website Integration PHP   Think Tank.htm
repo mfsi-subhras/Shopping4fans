@@ -1,0 +1,3309 @@
+﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" dir="ltr" lang="en-US">
+	<head profile="http://gmpg.org/xfn/11">
+		<title>PayPal PHP Integration | PayPal Website Integration PHP | Think Tank</title>
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+		<link rel="alternate" type="application/rss+xml" title="RSS 2.0" href="http://feeds.feedburner.com/evoluted-think-tank" />
+    <link rel="stylesheet" type="text/css" media="all" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/all.css"  />
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/style.css"  />
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/bubbles.css"  />
+		<script type="text/javascript">
+			var is_chrome = navigator.userAgent.toLowerCase().indexOf('chrome') > -1;
+			if(is_chrome===true) {
+				document.write('<link rel="stylesheet" type="text/css" media="all" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/nemo.css"  />');
+			}
+		</script>
+		<link rel="stylesheet" type="text/css" media="all" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/js/fancybox/jquery.fancybox-1.3.4.css"  />
+		
+		<link rel="shortcut icon" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/favicon.ico" />
+    <link rel="apple-touch-icon" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/images/touch-icon-iphone.png" />
+		<link rel="apple-touch-icon" sizes="72x72" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/images/touch-icon-ipad.png" />
+		<link rel="apple-touch-icon" sizes="114x114" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/images/touch-icon-iphone4.png" />
+						<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-includes/js/l10n.js?ver=20101110'></script>
+<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/js/comment-reply.js?ver=3.1'></script>
+<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-includes/js/jquery/jquery.js?ver=1.4.4'></script>
+<link rel="EditURI" type="application/rsd+xml" title="RSD" href="http://www.evoluted.net/thinktank/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="http://www.evoluted.net/thinktank/wp-includes/wlwmanifest.xml" /> 
+<link rel='index' title='Think Tank' href='http://www.evoluted.net/thinktank' />
+<link rel='start' title='PHP Directory Listing Script' href='http://www.evoluted.net/thinktank/web-development/php-directory-listing-script' />
+<link rel='prev' title='Five Ways Not to Write Fun Microcopy' href='http://www.evoluted.net/thinktank/copywriting/five-ways-not-to-write-fun-microcopy' />
+<link rel='next' title='10 Must-Have Firefox Add-ons for Web Developers' href='http://www.evoluted.net/thinktank/web-development/10-must-have-firefox-add-ons-for-web-developers' />
+<link rel='shortlink' href='http://www.evoluted.net/thinktank/?p=133' />
+
+<!-- All in One SEO Pack 1.6.13.2 by Michael Torbert of Semper Fi Web Design[220,295] -->
+<meta name="description" content="Learn how to integrate your website with PayPal via the use of PHP and MySQL. We use PayPal’s Instant Payment Notification Service (IPN) and a smattering of PHP." />
+<meta name="keywords" content="integration,ipn,mysql,paypal,php" />
+<link rel="canonical" href="http://www.evoluted.net/thinktank/web-development/paypal-php-integration" />
+<!-- /all in one seo pack -->
+<meta id="syntaxhighlighteranchor" name="syntaxhighlighter-version" content="3.1.1" />
+		
+		<script type="text/javascript" src="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/js/jquery.main.js"></script>
+    <script type="text/javascript" src="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/js/jquery.sound.js"></script>
+		<script type="text/javascript" src="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/js/fancybox/jquery.fancybox-1.3.4.min.js"></script>
+		
+		<!--[if lt IE 8]><link rel="stylesheet" type="text/css" href="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/ie.css" media="screen"/><![endif]-->
+				<script type="text/javascript">
+			var _gaq = _gaq || [];
+			_gaq.push(['_setAccount', 'UA-201394-56']);
+			_gaq.push(['_trackPageview']);
+		
+			(function() {
+				var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+				ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+				var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+			})();
+		</script>
+      </head>
+	<body>
+		<div id="fb-root"></div>
+		<script>(function(d, s, id) {
+		  var js, fjs = d.getElementsByTagName(s)[0];
+		  if (d.getElementById(id)) return;
+		  js = d.createElement(s); js.id = id;
+		  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+		  fjs.parentNode.insertBefore(js, fjs);
+		}(document, 'script', 'facebook-jssdk'));</script>
+	    <div id="evoluted-band">
+    	<div class="inner"><a href="">BACK TO EVOLUTED</a></div>
+    </div>
+	
+  	<div id="bubbles"></div>
+		<div id="wrapper" class="inner">
+			<div class="w1">
+				<div class="w2">
+					<div id="header">
+						<strong class="logo"><a href="http://www.evoluted.net/thinktank">Think Tank</a></strong>
+            <strong class="twitter-rss"><img src="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/images/header-twitter-rss.gif" usemap="#Map" />
+<map name="Map" id="Map">
+  <area shape="circle" coords="54,95,36" href="http://www.evoluted.net/thinktank/feed" target="_blank" alt="Follow our RSS feed" />
+<area shape="circle" coords="114,118,35" href="http://www.twitter.com/evolutednm" target="_blank" alt="Follow us on Twitter" />
+</map></strong>					</div>
+
+<div id="main">
+	<div id="content">
+						<div id="main-content" class="post">
+			<div class="date">
+				<div class="date-holder">
+					<strong>14</strong> FEB				</div>
+			</div>
+			<div class="title">
+				<h1>How to Set Up PayPal Integration with PHP &amp; MySQL</h1>
+			</div>
+
+			<div class="updates">
+<h4>Updates: 10th August 2011</h4>
+<ul>
+<li>The payments.php code (Line 60-64) has been slightly amended to fix the IPN Invalid Response.</li>
+<li>If you are not receiving the correct response from Paypal ensure that you are using the main test account (Verified Business Account) from your Paypal Sandbox account.</li>
+<li>Also ensure that you are testing the Paypal IPN Script on an online webserver (Not MAMP, Xampp etc..) as Paypal requires a reachable &#8216;return url&#8217;, &#8216;cancel url&#8217; and &#8216;notify url&#8217;.</li>
+<li>The downloadable source code has been updated with the above changes.</li>
+</ul>
+</div>
+<p>PayPal is the most popular payment service on the web so being able to integrate your website with PayPal’s Instant Payment Notification Service (IPN) is essential if you need to process payments through your website.</p>
+<p>There are 3 main parts to the PayPal IPN system.</p>
+<ol>
+<li>A webpage that initiates a request to PayPal to make a payment.</li>
+<li>A PHP page on your webserver that PayPal calls to notify you that payment has been made.</li>
+<li>A webpage that confirms the above payment and continues on to the next phase of your web application, such as a &#8216;Thank You&#8217; page.</li>
+</ol>
+<p>Parts 1 and 3 are accessible by customers on your website. Part 2 is only visible to PayPal.  The diagram below illustrates the interaction between your customer, PayPal and your website.</p>
+<p><a href="http://www.evoluted.net/thinktank/wp-content/uploads/2011/02/paypal-ipn-diagram.jpg"><img src="http://www.evoluted.net/thinktank/wp-content/uploads/2011/02/paypal-ipn-diagram.jpg" alt="PayPal Interaction" width="438" height="245" /></a></p>
+<p>The following steps break down each part of the process into easy to follow chunks, it is assumed that you have knowledge of PHP and MySQL.</p>
+<h3>Step 1 – Setup PayPal Account</h3>
+<p>Sign up for a <a href="https://www.paypal.com/uk/cgi-bin/webscr?cmd=_home">PayPal account</a> if you don’t already have one. Select an appropriate account type, either Personal or Business.</p>
+<p>Once you have a registered PayPal account your account must be setup correctly to use IPN.</p>
+<p>Select &#8216;edit profile&#8217; from your PayPal account and check the following settings.</p>
+<ul>
+<li>Under &#8216;Selling Preferences&#8217; &gt;&gt; &#8216;Instant Payment Notification Preferences&#8217;
+<ul>
+<li>Set the IPN value to &#8216;On&#8217;</li>
+<li>Set the IPN URL to the PHP page containing the IPN code shown in steps 3 &amp; 4 of this tutorial. (http://www.example.com/payment.php)</li>
+</ul>
+</li>
+<li>Under &#8216;Selling Preferences&#8217; &gt;&gt; &#8216;payment receiving preferences&#8217;
+<ul>
+<li>Block payments from users who pay with echeck. (This is because these will not be instant payments)</li>
+</ul>
+</li>
+<li>Under &#8216;account information&#8217; &gt;&gt; &#8216;email&#8217;
+<ul>
+<li>Note down your primary email address. This email will be visible to users so make it a professional one. User&#8217;s may feel apprehensive about sending money to an e-mail address with the domain &#8216;hotmail.com&#8217; or &#8216;Yahoo.com&#8217; etc&#8230;</li>
+</ul>
+</li>
+</ul>
+<h3>Step 2 – Simple HTML Form</h3>
+<p>Your website must now send all the required values to PayPal so that the payment can be processed.</p>
+<p>The following code example demonstrates a basic form that we will use to send the values:</p>
+<pre class="brush: xml; title: ;" title="">
+&lt;form id=&quot;paypal_form&quot; class=&quot;paypal&quot; action=&quot;payments.php&quot; method=&quot;post&quot;&gt;
+    &lt;input name=&quot;cmd&quot; type=&quot;hidden&quot; value=&quot;_xclick&quot; /&gt;
+    &lt;input name=&quot;no_note&quot; type=&quot;hidden&quot; value=&quot;1&quot; /&gt;
+    &lt;input name=&quot;lc&quot; type=&quot;hidden&quot; value=&quot;UK&quot; /&gt;
+    &lt;input name=&quot;currency_code&quot; type=&quot;hidden&quot; value=&quot;GBP&quot; /&gt;
+    &lt;input name=&quot;bn&quot; type=&quot;hidden&quot; value=&quot;PP-BuyNowBF:btn_buynow_LG.gif:NonHostedGuest&quot; /&gt;
+    &lt;input name=&quot;first_name&quot; type=&quot;hidden&quot; value=&quot;Customer's First Name&quot; /&gt;
+    &lt;input name=&quot;last_name&quot; type=&quot;hidden&quot; value=&quot;Customer's Last Name&quot; /&gt;
+    &lt;input name=&quot;payer_email&quot; type=&quot;hidden&quot; value=&quot;customer@example.com&quot; /&gt;
+    &lt;input name=&quot;item_number&quot; type=&quot;hidden&quot; value=&quot;123456&quot; /&gt;
+    &lt;input type=&quot;submit&quot; value=&quot;Submit Payment&quot; /&gt;
+&lt;/form&gt;
+</pre>
+<p>The business name, price, submit type, notify URL and other sensitive values will be sent during the next step.</p>
+<p>A full list of the values to send can be found at the <a href="https://cms.paypal.com/uk/cgi-bin/?cmd=_render-content&amp;content_ID=developer/e_howto_admin_IPNIntro#id091F0M006Y4">PayPal website</a> under the title <strong>&#8220;A Sample IPN Message and Response&#8221;</strong>.</p>
+<h3>Step 3 – Payments.php (The Request)</h3>
+<p>The payment.php page will be used to handle the outgoing request to PayPal and also to handle the incoming response after the payment has been processed.</p>
+<p>The following sample code shows the querystring being constructed before it is posted to PayPal. Here you can specify the following values:</p>
+<ul>
+<li>Business ($paypal_email) &#8211; Enter the email address of your PayPal account.</li>
+<li>Item name ($item_name) &#8211; The name of the item being purchased.</li>
+<li>Amount ($item_amount) &#8211; The price of the item.</li>
+<li>Return ($return_url) &#8211; The address to return to after a successful payment.</li>
+<li>Cancel Return ($cancel_url) &#8211; the address to return to after a cancelled payment.</li>
+<li>Notify URL ($notify_url) &#8211; The address of the payments.php page on your website.</li>
+<li>Custom – Any other data to be sent and returned with the PayPal request.</li>
+</ul>
+<pre class="brush: php; title: ;" title="">
+// Database variables
+$host = &quot;localhost&quot;; //database location
+$user = &quot;&quot;; //database username
+$pass = &quot;&quot;; //database password
+$db_name = &quot;&quot;; //database name
+
+// PayPal settings
+$paypal_email = 'paypal@example.com';
+$return_url = 'http://example.com/payment-successful.htm';
+$cancel_url = 'http://example.com/payment-cancelled.htm';
+$notify_url = 'http://example.com/paypal/payments.php';
+
+$item_name = 'Test Item';
+$item_amount = 5.00;
+
+// Include Functions
+include(&quot;functions.php&quot;);
+
+//Database Connection
+$link = mysql_connect($host, $user, $pass);
+mysql_select_db($db_name);
+
+// Check if paypal request or response
+if (!isset($_POST[&quot;txn_id&quot;]) &amp;&amp; !isset($_POST[&quot;txn_type&quot;])){
+
+	// Firstly Append paypal account to querystring
+	$querystring .= &quot;?business=&quot;.urlencode($paypal_email).&quot;&amp;&quot;;
+
+	// Append amount&amp; currency (£) to quersytring so it cannot be edited in html
+
+	//The item name and amount can be brought in dynamically by querying the $_POST['item_number'] variable.
+	$querystring .= &quot;item_name=&quot;.urlencode($item_name).&quot;&amp;&quot;;
+	$querystring .= &quot;amount=&quot;.urlencode($item_amount).&quot;&amp;&quot;;
+
+	//loop for posted values and append to querystring
+	foreach($_POST as $key =&gt; $value){
+		$value = urlencode(stripslashes($value));
+		$querystring .= &quot;$key=$value&amp;&quot;;
+	}
+
+	// Append paypal return addresses
+	$querystring .= &quot;return=&quot;.urlencode(stripslashes($return_url)).&quot;&amp;&quot;;
+	$querystring .= &quot;cancel_return=&quot;.urlencode(stripslashes($cancel_url)).&quot;&amp;&quot;;
+	$querystring .= &quot;notify_url=&quot;.urlencode($notify_url);
+
+	// Append querystring with custom field
+	//$querystring .= &quot;&amp;custom=&quot;.USERID;
+
+	// Redirect to paypal IPN
+	header('location:https://www.sandbox.paypal.com/cgi-bin/webscr'.$querystring);
+	exit();
+
+}else{
+	// Response from PayPal
+}
+</pre>
+<h3>Step 4 – Payments.php (The Response)</h3>
+<p>The next part of the payments.php page handles the response from PayPal. The response is re-assigned to variables and then posted back to PayPal for verification using fsockopen.</p>
+<p>If the response is VERIFIED then a validation check can be performed.  The check_txnid and check_price functions are called to check that the correct Transaction ID and Price have been returned. The updatePayments function can finally be called to store the details of the payment in the payments table (Step 6).</p>
+<pre class="brush: php; title: ;" title="">
+// Database variables
+$host = &quot;localhost&quot;; //database location
+$user = &quot;&quot;; //database username
+$pass = &quot;&quot;; //database password
+$db_name = &quot;&quot;; //database name
+
+// PayPal settings
+$paypal_email = 'paypal@example.com';
+$return_url = 'http://example.com/payment-successful.htm';
+$cancel_url = 'http://example.com/payment-cancelled.htm';
+$notify_url = 'http://example.com/paypal/payments.php';
+
+$item_name = 'Test Item';
+$item_amount = 5.00;
+
+// Include Functions
+include(&quot;functions.php&quot;);
+
+//Database Connection
+$link = mysql_connect($host, $user, $pass);
+mysql_select_db($db_name);
+
+// Check if paypal request or response
+if (!isset($_POST[&quot;txn_id&quot;]) &amp;&amp; !isset($_POST[&quot;txn_type&quot;])){
+	// Request from step 3
+}else{
+
+	// Response from Paypal
+
+	// read the post from PayPal system and add 'cmd'
+	$req = 'cmd=_notify-validate';
+	foreach ($_POST as $key =&gt; $value) {
+		$value = urlencode(stripslashes($value));
+		$value = preg_replace('/(.*[^%^0^D])(%0A)(.*)/i','${1}%0D%0A${3}',$value);// IPN fix
+		$req .= &quot;&amp;$key=$value&quot;;
+	}
+
+	// assign posted variables to local variables
+	$data['item_name']			= $_POST['item_name'];
+	$data['item_number'] 		= $_POST['item_number'];
+	$data['payment_status'] 	= $_POST['payment_status'];
+	$data['payment_amount'] 	= $_POST['mc_gross'];
+	$data['payment_currency']	= $_POST['mc_currency'];
+	$data['txn_id']				= $_POST['txn_id'];
+	$data['receiver_email'] 	= $_POST['receiver_email'];
+	$data['payer_email'] 		= $_POST['payer_email'];
+	$data['custom'] 			= $_POST['custom'];
+
+	// post back to PayPal system to validate
+	$header = &quot;POST /cgi-bin/webscr HTTP/1.0\r\n&quot;;
+	$header .= &quot;Content-Type: application/x-www-form-urlencoded\r\n&quot;;
+	$header .= &quot;Content-Length: &quot; . strlen($req) . &quot;\r\n\r\n&quot;;
+
+	$fp = fsockopen ('ssl://www.sandbox.paypal.com', 443, $errno, $errstr, 30);
+
+	if (!$fp) {
+		// HTTP ERROR
+	} else {
+				mail('ash@evoluted.net', '0', '0');
+		fputs ($fp, $header . $req);
+		while (!feof($fp)) {
+			$res = fgets ($fp, 1024);
+			if (strcmp ($res, &quot;VERIFIED&quot;) == 0) {
+
+				// Validate payment (Check unique txnid &amp; correct price)
+				$valid_txnid = check_txnid($data['txn_id']);
+				$valid_price = check_price($data['payment_amount'], $data['item_number']);
+				// PAYMENT VALIDATED &amp; VERIFIED!
+				if($valid_txnid &amp;&amp; $valid_price){
+					$orderid = updatePayments($data);
+					if($orderid){
+						// Payment has been made &amp; successfully inserted into the Database
+					}else{
+						// Error inserting into DB
+						// E-mail admin or alert user
+					}
+				}else{
+					// Payment made but data has been changed
+					// E-mail admin or alert user
+				}
+
+			}else if (strcmp ($res, &quot;INVALID&quot;) == 0) {
+
+				// PAYMENT INVALID &amp; INVESTIGATE MANUALY!
+				// E-mail admin or alert user
+			}
+		}
+	fclose ($fp);
+	}
+}
+</pre>
+<h3>Step 5 – Functions.php</h3>
+<p>The payments.php page calls upon a number of functions used to validate the returned data and store the response in the database.</p>
+<pre class="brush: php; title: ;" title="">
+// functions.php
+function check_txnid($tnxid){
+	global $link;
+	return true;
+	$valid_txnid = true;
+    //get result set
+    $sql = mysql_query(&quot;SELECT * FROM `payments` WHERE txnid = '$tnxid'&quot;, $link);
+	if($row = mysql_fetch_array($sql)) {
+        $valid_txnid = false;
+	}
+    return $valid_txnid;
+}
+
+function check_price($price, $id){
+    $valid_price = false;
+ 	/*
+	you could use the below to check whether the correct price has been paid for the product
+	if so uncomment the below code
+
+	$sql = mysql_query(&quot;SELECT amount FROM `products` WHERE id = '$id'&quot;);
+    if (mysql_numrows($sql) != 0) {
+		while ($row = mysql_fetch_array($sql)) {
+			$num = (float)$row['amount'];
+			if($num == $price){
+				$valid_price = true;
+			}
+		}
+    }
+	return $valid_price;
+	*/
+	return true;
+}
+
+function updatePayments($data){
+    global $link;
+	if(is_array($data)){
+        $sql = mysql_query(&quot;INSERT INTO `payments` (txnid, payment_amount, payment_status, itemid, createdtime) VALUES (
+                '&quot;.$data['txn_id'].&quot;' ,
+                '&quot;.$data['payment_amount'].&quot;' ,
+                '&quot;.$data['payment_status'].&quot;' ,
+                '&quot;.$data['item_number'].&quot;' ,
+                '&quot;.date(&quot;Y-m-d H:i:s&quot;).&quot;'
+                )&quot;, $link);
+    return mysql_insert_id($link);
+    }
+}
+</pre>
+<h3>Step 6 – Setting Up The Payments Table</h3>
+<p>To store payment details in the database a payments table must be created in your database. The following MYSQL code will create a payments table.</p>
+<pre class="brush: sql; title: ;" title="">
+CREATE TABLE IF NOT EXISTS `payments` (
+  `id` int(6) NOT NULL AUTO_INCREMENT,
+  `txnid` varchar(20) NOT NULL,
+  `payment_amount` decimal(7,2) NOT NULL,
+  `payment_status` varchar(25) NOT NULL,
+  `itemid` varchar(25) NOT NULL,
+  `createdtime` datetime NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=MyISAM DEFAULT CHARSET=latin1 AUTO_INCREMENT=1 ;
+</pre>
+<h3>Step 7 – Sandbox Testing / Going Live</h3>
+<p>PayPal Sandbox offers all of the functionality of PayPal, but the information involves all &#8220;Fake accounts&#8221; created by the developer. You can create fake buyer and fake seller profiles, then test your PayPal integration through your development website.</p>
+<p>During the testing phase of the development process the PayPal links should be prefixed to <a href="http://www.sandbox.paypal.com/">www.sandbox.paypal.com</a>. You can visit the <a href="https://developer.paypal.com/">PayPal Developer website</a> and sign up for a free PayPal Sandbox account</p>
+<p>Once the payment process is ready to be used by real customers you will need to remove the sandbox from each PayPal link to <a href="http://www.paypal.com/">www.paypal.com</a>.</p>
+<p>That’s it; you’re ready to start taking payments online through your website.</p>
+<h3>PayPal Integration &#8211; Source Files</h3>
+<div class="post-buttons" style="text-align: left;"><a class="download-source" href="http://www.evoluted.net/thinktank/wp-content/uploads/2011/02/Paypal-IPN-Evoluted-10-08-2011.zip" target="_blank">Download source files</a></div>
+
+			<div class="fb-like" data-href="http://www.facebook.com/evoluted" data-send="false" data-width="450" data-show-faces="false" data-font="arial"></div>
+
+			<p>Tags: <a href="http://www.evoluted.net/thinktank/tags/integration" rel="tag">integration</a>, <a href="http://www.evoluted.net/thinktank/tags/ipn" rel="tag">ipn</a>, <a href="http://www.evoluted.net/thinktank/tags/mysql" rel="tag">mysql</a>, <a href="http://www.evoluted.net/thinktank/tags/paypal" rel="tag">paypal</a>, <a href="http://www.evoluted.net/thinktank/tags/php" rel="tag">php</a></p>
+		</div>
+
+		<div class="author-block">
+			<div class="image-holder">
+				<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=101&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D101&amp;r=G' class='avatar avatar-101 photo' height='101' width='101' />			</div>
+			<div class="text-holder">
+				
+				
+				<h3>Written by Dan Lawson</h3>
+				<p>Dan is a Web Developer and (self proclaimed) Fifa skills maestro at 
+Evoluted. He spends most of his time developing attractive 
+and engaging websites whilst avoiding the peer pressure of drinking tea or coffee. He enjoys watching Manchester United in his spare time and is the 6 time office Fifa champion.</p> 
+				<a href="http://www.evoluted.net/thinktank/author/Dan" class="more">More posts by Dan Lawson</a>
+			</div>
+		</div>
+
+		  <div class="social-block">
+    <h3>Like this article? <span class="mark">please share it</span></h3>
+    <ul class="social">
+      <li><a href="http://www.facebook.com/sharer.php?u=http%3A%2F%2Fwww.evoluted.net%2Fthinktank%2Fweb-development%2Fpaypal-php-integration&amp;t=How%20to%20Set%20Up%20PayPal%20Integration%20with%20PHP%20%26amp%3B%20MySQL" target="_blank" class="facebook">FACEBOOK</a></li>
+      			<li><a href="http://twitter.com/share?text=How+to+Set+Up+PayPal+Integration+with+PHP+%26amp%3B+MySQL&amp;url=http%3A%2F%2Fwww.evoluted.net%2Fthinktank%2Fweb-development%2Fpaypal-php-integration&amp;via=evolutednm" target="_blank" class="tweet">TWEET IT</a></li>
+      <li><a href="http://www.digg.com/submit?phase=2&amp;url=http://www.evoluted.net/thinktank/web-development/paypal-php-integration&amp;title=How to Set Up PayPal Integration with PHP &amp; MySQL" target="_blank" class="digg">DIGG IT</a></li>
+      <li><a href="http://www.stumbleupon.com/submit?url=http://www.evoluted.net/thinktank/web-development/paypal-php-integration&amp;title=How to Set Up PayPal Integration with PHP &amp; MySQL" target="_blank" class="stumble">STUMBLE</a></li>
+      <li><a href="http://reddit.com/submit?url=http://www.evoluted.net/thinktank/web-development/paypal-php-integration&amp;title=How to Set Up PayPal Integration with PHP &amp; MySQL" target="_blank" class="reddit">REDDIT</a></li>
+      <li><a href="mailto:?subject=I%20found%20an%20interesting%20post%20on%20Think%20Tank&amp;body=I%20found%20an%20interesting%20post%20over%20at%20http%3A%2F%2Fwww.evoluted.net%2Fthinktank%2F%20that%20I%20thought%20you%20might%20be%20interested%20in%21%0D%0A%0D%0Ahttp%3A%2F%2Fwww.evoluted.net%2Fthinktank%2Fweb-development%2Fpaypal-php-integration" class="email">EMAIL</a></li>
+      <li><a href="http://www.evoluted.net/thinktank/feed" class="rss">RSS</a></li>
+    </ul>
+  </div>
+
+		
+<div class="section">
+	 	
+  <div id="comments">
+		<h3>140 Comments</h3>
+		<ol class="comments">
+				
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/ab474a0efa5d9d564cc09f5b0ccf1a77?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Vixka Studio</h4>
+						<em class="date">March 02, 2011 at 9:23 am</em>
+					</div>
+										<p>Wow, this article is so useful. I&#8217;m trying to make custom payment using Paypal. <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/366c658f47e069005a98434e2ee5d67c?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>rama krishna</h4>
+						<em class="date">July 21, 2011 at 1:47 pm</em>
+					</div>
+										<p>Hi, Its very cool code. I was successfully run the code. Thanks .</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/758f661b881b5a02623e92849949295a?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Nick</h4>
+						<em class="date">March 23, 2011 at 5:47 am</em>
+					</div>
+										<p>Thank you for this, will be extremely useful. One thing though in the SQL, it says 	  `itemid` int(6) varchar(25) NOT NULL, so which one is it? =)</p>
+<p>I&#8217;m new to alot of this but int and varchar together return errors in the syntax and I&#8217;m guessing you can&#8217;t have it as both?</p>
+<p>Thanks again!</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">March 23, 2011 at 9:19 am</em>
+					</div>
+										<p>Thank you for highlighting that error Nick. The correct data type should be varchar(25). The article and source code have been updated.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/1ef4caa266b099ee6ecad640067c4aba?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Ranjit</h4>
+						<em class="date">April 03, 2012 at 12:48 pm</em>
+					</div>
+										<p>Very Nice Document.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/efb6a3fbec30c4d66da8c5c6c30cd404?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>riccardo</h4>
+						<em class="date">April 04, 2011 at 8:19 pm</em>
+					</div>
+										<p>Hi Dan,<br />
+I&#8217;m new to this but finally I&#8217;ve found your article because sounds so useful for me.<br />
+I&#8217;ve a question: in your example do the customers have a paypal account or they can use even credit cards?<br />
+I my previous version (without the paypal feedback) I&#8217;ve simply linked the page &#8220;&#8221; in this way.<br />
+May I do the same putting the right paypal settings?<br />
+thank you in advance<br />
+Riccardo (Italy)</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">April 18, 2011 at 8:07 am</em>
+					</div>
+										<p>Hi Riccardo,<br />
+Customers do not need to have a Paypal account to purchase items using this system. They have the option to register and create an account or simply enter their credit/debit card details to complete the purchase.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/efb6a3fbec30c4d66da8c5c6c30cd404?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Riccardo</h4>
+						<em class="date">July 05, 2011 at 11:05 am</em>
+					</div>
+										<p>dear Dan,<br />
+I have another question.<br />
+I&#8217;m making a test using sandbox but when the paypal window payment appears the customer needs a paypal account, I mean .. he can&#8217;t use a direct payment via credit card unless he makes a paypal account registration.<br />
+Any chances to configure params in order to avoid the paypal account registration?<br />
+thank you in advance</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/dc9a24a478b4b68df110334cea9e044b?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Rob Petrie</h4>
+						<em class="date">November 15, 2011 at 6:28 am</em>
+					</div>
+										<p>@Riccardo (anyone else who wants to know more about using credit cards with PayPal):</p>
+<p>Hate to say this, but PayPal doesn&#8217;t let you submit credit card information directly via an API. You (e.g., the user) are ALWAYS taken to a PayPal interface at some point during the process.</p>
+<p>If you are wanting to avoid having the user know you are using PayPal, you might want to consider AuthorizeNet, TrustCommerce.com or a similar payment gateway. Yes, they charge monthly fees, but depending on the volume of your transactions it may be worth it.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/f77c7ce267a62b45ada5f3987178743e?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>tim</h4>
+						<em class="date">December 31, 2011 at 5:15 pm</em>
+					</div>
+										<p>That is not entirely correct, Rob. If you use THIS method of initiating a transaction (sending the payment request to PayPal via a link with variables) then you WILL have to make your payment on PayPal&#8217;s site.<br />
+PayPal does offer other options (paid options) that allow you to process cards directly from your site, with underlying processes invisible to the user. Website Payments Pro (<a href="https://www.x.com/developers/paypal/products/website-payments-pro" rel="nofollow">https://www.x.com/developers/paypal/products/website-payments-pro</a>) is one such option.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/b3ab907167ad068acd7a111793aa491a?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Subramanyam</h4>
+						<em class="date">May 05, 2011 at 3:43 pm</em>
+					</div>
+										<p>Really awesome work.Thanks a lot,this helped me very much.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/b1dad4a59b6672641c4575cf1bbeaf2f?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>JoeBob</h4>
+						<em class="date">May 21, 2011 at 1:50 pm</em>
+					</div>
+										<p>Trying to work with this in a test mode, but after filling in the form, I am taken to &#8220;payments.php&#8221; which displays all of the code in the browser window, rather than taking me to the paypal sandbox. It seems it&#8217;s not running the PHP script, but instead displaying it. Any idea what I&#8217;m missing?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">May 23, 2011 at 8:29 am</em>
+					</div>
+										<p>Hi JoeBob, Are you testing this locally? If local then PHP requires a free service such as <a href="http://www.apachefriends.org/en/xampp.html" rel="nofollow">XAMPP</a> or <a href="http://www.wampserver.com/en/" rel="nofollow">WAMP</a> to run PHP pages.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/be883ecd0f6e902684f32fe20f0cb795?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Shaun</h4>
+						<em class="date">May 21, 2011 at 8:16 pm</em>
+					</div>
+										<p>Hey Dan, thanks so much for this article &#8211; developed a credit system using the IPN for my site in about an hour thanks to you!</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">May 23, 2011 at 9:07 am</em>
+					</div>
+										<p>No problem, glad you got it working.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/bcbd5bedfadc589ff50cb0b276674343?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Ashok</h4>
+						<em class="date">May 25, 2011 at 7:07 am</em>
+					</div>
+										<p>Hello Dan<br />
+How can I add  multiple items in a paypal transaction? This should show multiple items in paypal payment screen.</p>
+<p>Regards<br />
+Ashok</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">May 25, 2011 at 9:24 am</em>
+					</div>
+										<p>Hi Ashok,</p>
+<p>To send multiple items to Paypal IPN you must first alter your HTML so that:</p>
+<pre class="brush: xml; title: ;" title="">
+&lt;input type=&quot;hidden&quot; name=&quot;cmd&quot; value=&quot;_xclick&quot; /&gt;
+
+is changed to:
+
+&lt;input type=&quot;hidden&quot; name=&quot;cmd&quot; value=&quot;_cart&quot; /&gt;
+</pre>
+<p>You can then pass through the Item Name and Item Number as follows:</p>
+<pre class="brush: php; title: ;" title="">
+item_number1 = 1;
+item_name1 = &quot;Product 1&quot;;
+item_number2 = 2;
+item_name2 = &quot;Product 2&quot;;
+item_number3 = 3;
+item_name3 = &quot;Product 3&quot;;
+</pre>
+<p>You can also add &#8216;<em>amount1, amount2</em> etc..&#8217; to specify individual prices per item.  These variables should then be added to the <em>$querystring</em> variable and passed to Paypal. </p>
+<p>More details <a href="https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&amp;content_ID=developer/e_howto_html_IPNandPDTVariables#id091EB04C0HS__id0913D0J01O8" rel="nofollow">in the documentation</a>.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/ffb65c0425936471742326d76ba7df21?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Shannon</h4>
+						<em class="date">February 21, 2012 at 3:27 am</em>
+					</div>
+										<p>Is _xclick/_cart paypal api variables or are they defined by the developer?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/370d20046dbe51be69f0c96f1bf17182?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Xahyd</h4>
+						<em class="date">May 30, 2011 at 7:08 am</em>
+					</div>
+										<p>Nice tutorial, but i didn&#8217;t get where exactly the following 3 links are used. Please can you explain:</p>
+<p>$return_url = &#8216;<a href="http://example.com/payment-successful.htm&#039;" rel="nofollow">http://example.com/payment-successful.htm&#039;</a>;<br />
+$cancel_url = &#8216;<a href="http://example.com/payment-cancelled.htm&#039;" rel="nofollow">http://example.com/payment-cancelled.htm&#039;</a>;<br />
+$notify_url = &#8216;<a href="http://example.com/paypal/payments.php&#039;" rel="nofollow">http://example.com/paypal/payments.php&#039;</a>;</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">May 31, 2011 at 9:11 am</em>
+					</div>
+										<p>Hello.</p>
+<p>The <strong>$return_url</strong> is used on line 42 &#8216;<em>Append paypal return addresses</em>&#8216;. This is a page on your web server that is displayed after the Paypal transaction is complete.</p>
+<p>The <strong>$cancel_url</strong> on line 43 is a page on your web server that is displayed if the user cancel&#8217;s the Paypal transaction from the Paypal window.</p>
+<p>The <strong>$notify_url</strong> is the path of the payments.php page on your web server. In the example this is located within a Paypal folder.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/370d20046dbe51be69f0c96f1bf17182?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Xahyd</h4>
+						<em class="date">May 31, 2011 at 2:58 pm</em>
+					</div>
+										<p>thnx for describing<br />
+i hav a prob with this code, when i make transaction using sandbox i m transfered to success page but my database is not updated according to it.<br />
+mean to say there is some prob in ipn section</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">May 31, 2011 at 3:08 pm</em>
+					</div>
+										<p>Do you have an example of the code you are using to update your database? If the Paypal IPN is returning back to your $return_url then this would assume the problem is with the database code.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/370d20046dbe51be69f0c96f1bf17182?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Xahyd</h4>
+						<em class="date">June 01, 2011 at 11:56 am</em>
+					</div>
+										<p>thnx for quick reply.<br />
+actually i email my self and update record in db. if there is some problem with query, at least it must sent email.<br />
+may be code after the following lines didnot work:<br />
+if (strcmp ($res, &#8220;VERIFIED&#8221;) == 0)</p>
+<p>but i receive payment status &#8220;Completed&#8221; on success page.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/f17f73ef8950604b2d40c959b40a7d48?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Vikram</h4>
+						<em class="date">May 30, 2011 at 1:18 pm</em>
+					</div>
+										<p>hi!</p>
+<p>We are trying to send Unit Price and item number for multiple items to paypal. But everytime it shows grand total instead of unit price under the column of UNit price.</p>
+<p>Any suggestions?</p>
+<p>Vikram R</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">May 31, 2011 at 2:56 pm</em>
+					</div>
+										<p>Hi Vikram,  Do you have a demo online anywhere that I can view the problem. It sounds like you are missing out a required parameter in the query string that is being sent to Paypal.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/ef56cde54675935c5c1e7711cab4c685?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dave</h4>
+						<em class="date">June 03, 2011 at 2:20 am</em>
+					</div>
+										<p>Hi,<br />
+Thanks for the great script</p>
+<p>After the payement, i get this error</p>
+<p>The requested method POST is not allowed for the URL</p>
+<p>the return url into a https<br />
+is that the problem ? </p>
+<p>Can you help ?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 06, 2011 at 3:25 pm</em>
+					</div>
+										<p>Hi Dave,</p>
+<p>This sounds like you have set your $return_url to a <b>.htm</b> or <b>.html</b> page.</p>
+<p>Try using a <b>.php</b> page as your $return_url.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/50fbe30f2666c715b0362e296401ccf8?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>frz</h4>
+						<em class="date">June 06, 2011 at 12:20 pm</em>
+					</div>
+										<p>Great tutorial Dan!</p>
+<p>I&#8217;m using Paypal sandbox, after I submit the payment nothing happens, it just shows me the success page and does not update the database. Please help.</p>
+<p>Thanks</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 13, 2011 at 5:22 pm</em>
+					</div>
+										<p>Hi,</p>
+<p>Are you using the exact same code as posted in the example or have you changed it in some way?</p>
+<p>To test if the updatePayments function has been reached you could add a mail function In before it is called.</p>
+<p>You may also want to try testing online rather than locally as this can sometimes lead to unexpected errors.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/8e9781f4dd4454e59f8e35dfa34faf11?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Taylor</h4>
+						<em class="date">December 17, 2011 at 2:32 pm</em>
+					</div>
+										<p>I&#8217;m having the same problem. I used the exact same code, I just inserted my information for the database variables and paypal settings. I get the success page in paypal sandbox but nothing is added to my database. The only way I can get back to my site&#8217;s success page is by clicking the &#8220;Return to Taylor&#8217;s Test Store&#8221; link on the confirmation page. Is that what is supposed to happen? I&#8217;m pretty new to all of this so I could just be missing something. Please help</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">December 19, 2011 at 10:16 am</em>
+					</div>
+										<p>Hi Taylor</p>
+<p>Can you confirm that you are testing the Paypal code on a live server that is reachable by Paypal IPN.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/8e9781f4dd4454e59f8e35dfa34faf11?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Taylor</h4>
+						<em class="date">January 02, 2012 at 2:26 pm</em>
+					</div>
+										<p>I do have it uploaded to my live server which should be reachable by the IPN. is there a way to test if the server is reachable?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/36c8dffe45499deb7c5f7e6a636f55c2?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Isaac</h4>
+						<em class="date">June 13, 2011 at 5:26 am</em>
+					</div>
+										<p>Hi Dan, I love your tutorial!</p>
+<p>However I have a couple questions to ask as I&#8217;m new to this.</p>
+<p>I see that your payments.php is receiving $_POST['custom'] so does that mean that if I pass in  at html it will return me 444 (if 444 is my customer ID in my website so that I can update him as paid)? Also can this system be used for subscription on paypal?</p>
+<p>I also would like to know do we remove this two lines:<br />
+14 $item_name = &#8216;Test Item&#8217;;<br />
+15 $item_amount = 5.00;</p>
+<p>when we are going to deploy it live?<br />
+Thanks</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 13, 2011 at 4:47 pm</em>
+					</div>
+										<p>Hello Isaac,</p>
+<p>The &#8216;custom&#8217; variable can be any value that you wish to transfer between the payments.php page and the response from Paypal. In your case the ID 444 could be used to update the customer as &#8216;paid&#8217;.</p>
+<p>This system can be used for subscription payments however the sample code Is not currently set up to do so. You can view which extra parameters you need at the <a href="https://www.paypal.com/cgi-bin/webscr?cmd=p/acc/ipn-subscriptions-outside" rel="nofollow">paypal website here</a>.</p>
+<p>The $item_name and $item_amount variables are to determine what the Paypal payment is for and how much. They can either be pre-set in the payments.php code or brought in dynamically (The user selects a product to purchase on the website).</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/36c8dffe45499deb7c5f7e6a636f55c2?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Isaac</h4>
+						<em class="date">June 14, 2011 at 2:14 am</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>Thanks for the clarification. Therefore so to speak I can just generate the code from paypal&#8217;s website standard button and throws in those extra parameters in the html submission form ya? Just make sure at ipn handler and grab them</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 17, 2011 at 11:26 am</em>
+					</div>
+										<p>That&#8217;s right Isaac,</p>
+<p>The paypal standard button is performing the same IPN request/ response as this sample code.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/bef457d1e582b1234f5a54fc02824df1?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Kamaraj</h4>
+						<em class="date">June 14, 2011 at 7:11 pm</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>I have implemented your code in to my Joomla website.<br />
+URL:  <a href="http://singaporetamilwriters.com/wtwc/index.php/register-here/registration-form-locals" rel="nofollow">http://singaporetamilwriters.com/wtwc/index.php/register-here/registration-form-locals</a></p>
+<p>I have tested with sandbox many times. It was working fine.<br />
+When I am testing with PayPal actual account, payment is made, but the functions inside this<br />
+if (strcmp ($res, &#8220;VERIFIED&#8221;) == 0) { } condition is not working.</p>
+<p>if (strcmp ($res, &#8220;VERIFIED&#8221;) == 0) {<br />
+	/* Not working */<br />
+}<br />
+else if (strcmp ($res, &#8220;INVALID&#8221;) == 0) {<br />
+	/*  Working */<br />
+}	</p>
+<p>Please help me.</p>
+<p>Thanks in advance.<br />
+Kamaraj.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 17, 2011 at 11:25 am</em>
+					</div>
+										<p>Hi Kamaraj,</p>
+<p>Could you place the following debug code into your <strong>/payment-successful.php</strong> file:</p>
+<pre class="brush: php; title: ;" title="">
+echo &quot;&lt;pre&gt;&quot;.var_dump($_POST).&quot;&lt;/pre&gt;&quot;;
+</pre>
+<p>This will output all the Paypal response variables.  Could you confirm the <strong>[pending_reason]</strong>?</p>
+<p>thanks.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/e60be001cfeb96a8c993bcf4a34deac9?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jason Carroll</h4>
+						<em class="date">June 20, 2011 at 8:33 am</em>
+					</div>
+										<p>Hello Dan,</p>
+<p>Thank you for this great tutorial, I have one question so far, step 3 and 4 have the same file name but different file content ?  Not sure if I am missing something here.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 20, 2011 at 10:21 am</em>
+					</div>
+										<p>Hi Jason,</p>
+<p>The payments.php file is broken up into two parts for the purposes of explaining what each section does in this tutorial.  If you open the sample files <a href="http://www.evoluted.net/thinktank/wp-content/uploads/2011/02/PayPal-IPN-Example-23.03.11.zip" rel="nofollow">here</a> it may become clearer.</p>
+<p>Thanks.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/e60be001cfeb96a8c993bcf4a34deac9?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jason Carroll</h4>
+						<em class="date">June 20, 2011 at 11:10 am</em>
+					</div>
+										<p>Thank you Dan.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/92c83136ec305db5d196eb9e0bc00bf1?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Joseph</h4>
+						<em class="date">June 22, 2011 at 7:57 am</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>I&#8217;m new to php. Is it possible to change the currency to MYR?</p>
+<p>Thanks in advance.<br />
+Joseph</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">June 22, 2011 at 10:13 am</em>
+					</div>
+										<p>Hi Joseph,</p>
+<p>To change the currency to Malaysian you would need to change the <strong>currency_code</strong> variable to MYR.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/232873330bd566f89f0edaac91e46592?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Manjula</h4>
+						<em class="date">June 26, 2011 at 7:26 am</em>
+					</div>
+										<p>Thanks for your guide&#8230;. this document is clear and really helpfull</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/efb6a3fbec30c4d66da8c5c6c30cd404?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>riccardo</h4>
+						<em class="date">July 06, 2011 at 12:51 pm</em>
+					</div>
+										<p>Dear Dan,<br />
+I&#8217;m experiencing a problem: the &#8220;fsockopen&#8221; fails (I did not change your example).<br />
+The paypal transaction is completed and successful. here is the $_POST variable</p>
+<p>array(33) { ["mc_gross"]=&gt; string(4) &#8220;5.00&#8243; ["protection_eligibility"]=&gt; string(10) &#8220;Ineligible&#8221; ["payer_id"]=&gt; string(13) &#8220;NUZDBE7UATCZG&#8221; ["tax"]=&gt; string(4) &#8220;0.00&#8243; ["payment_date"]=&gt; string(25) &#8220;04:49:15 Jul 06, 2011 PDT&#8221; ["payment_status"]=&gt; string(9) &#8220;Completed&#8221; ["charset"]=&gt; string(12) &#8220;windows-1252&#8243; ["first_name"]=&gt; string(8) &#8220;Riccardo&#8221; ["mc_fee"]=&gt; string(4) &#8220;0.52&#8243; ["notify_version"]=&gt; string(3) &#8220;3.1&#8243; ["custom"]=&gt; string(0) &#8220;&#8221; ["payer_status"]=&gt; string(10) &#8220;unverified&#8221; ["business"]=&gt; string(30) &#8220;info_1309859245_biz@zenweb.biz&#8221; ["quantity"]=&gt; string(1) &#8220;1&#8243; ["payer_email"]=&gt; string(19) &#8220;r.rrrrrr@gmail.com&#8221; ["verify_sign"]=&gt; string(56) &#8220;AAPxdwqA6Qyxa8LzcNiBQOchbiL-AHCr7TjQpRrJ29bkB1Iqw0ozjV.o&#8221; ["txn_id"]=&gt; string(17) &#8220;32978634XL760873V&#8221; ["payment_type"]=&gt; string(7) &#8220;instant&#8221; ["last_name"]=&gt; string(7) &#8220;Rossi&#8221; ["receiver_email"]=&gt; string(30) &#8220;info_1309859245_biz@zenweb.biz&#8221; ["payment_fee"]=&gt; string(0) &#8220;&#8221; ["receiver_id"]=&gt; string(13) &#8220;JB58DVUF63N7A&#8221; ["txn_type"]=&gt; string(10) &#8220;web_accept&#8221; ["item_name"]=&gt; string(45) &#8220;Communication Conference Fee&#8221; ["mc_currency"]=&gt; string(3) &#8220;EUR&#8221; ["item_number"]=&gt; string(4) &#8220;K143&#8243; ["residence_country"]=&gt; string(2) &#8220;IT&#8221; ["test_ipn"]=&gt; string(1) &#8220;1&#8243; ["handling_amount"]=&gt; string(4) &#8220;0.00&#8243; ["transaction_subject"]=&gt; string(45) &#8220;Communication Conference Fee&#8221; ["payment_gross"]=&gt; string(0) &#8220;&#8221; ["shipping"]=&gt; string(4) &#8220;0.00&#8243; ["merchant_return_link"]=&gt; string(44) &#8220;Torna al sito Riccardo Rossi\&#8217;s Test Store&#8221; } </p>
+<p>thank you in advance<br />
+ciao<br />
+Rick</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/274da02eed47552016bf08306ddb53da?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>George</h4>
+						<em class="date">July 12, 2011 at 12:02 pm</em>
+					</div>
+										<p>How can I append other form values like Name, Email etc to the database. I am losing all the data once it gets redirected to paypal sandbox</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">July 12, 2011 at 1:37 pm</em>
+					</div>
+										<p>Hi George,</p>
+<p>You would need to insert your form data into the database before the initial Paypal querystring is sent.  The usual process is to insert the form data into the database, retrieve the ID of the newly inserted row then use this as the <strong>custom</strong> variable in the $querystring.</p>
+<p>This will then be returned by Paypal so that you can query your database for the information.</p>
+<p>Hope that helped,</p>
+<p>Dan.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/274da02eed47552016bf08306ddb53da?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>George</h4>
+						<em class="date">July 12, 2011 at 3:08 pm</em>
+					</div>
+										<p>Thanks Dan</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/b2bbdd7b4e92f1c454b205dbd96d77d7?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Madav</h4>
+						<em class="date">August 03, 2011 at 2:30 am</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>Sorry I&#8217;m new in e-commerce. In the code you gave us, when the paypal transaction has confirmed, the browser return to the payments.php but nothing happend. Just show a BLANK PAGE and the records did not insert in the database. No errors and no clues. Can you help me&#8230;? Thanks in advance.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">August 10, 2011 at 1:35 pm</em>
+					</div>
+										<p>Hi,</p>
+<p>The code has been updated with the changes listed at the top of the page. If you could try these and see if you are still having any problems.</p>
+<p>Thanks</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/1eefdfd7e64a300b4a517bec6fae3559?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Bill</h4>
+						<em class="date">August 19, 2011 at 5:27 am</em>
+					</div>
+										<p>Hi Dan,<br />
+Pretty good tutorial. I tried your script and it was doing fine all the way to payment successful page. I looked at my sandbox account and all the payments made are there. However, I am puzzled (extremely), why the database are not being updated. I tested it over 10 times, but no luck. </p>
+<p>Thanks for your help..<br />
+Bill</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/1eefdfd7e64a300b4a517bec6fae3559?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Bill</h4>
+						<em class="date">August 19, 2011 at 5:33 am</em>
+					</div>
+										<p>Hi Dan,<br />
+I&#8217;m sorry for double posts, but I really have to let you know that it is working on my side now.</p>
+<p>Great script&#8230;thanks for your hard work..</p>
+<p>Thanks,<br />
+Bill</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/1eefdfd7e64a300b4a517bec6fae3559?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Bill</h4>
+						<em class="date">August 20, 2011 at 7:59 pm</em>
+					</div>
+										<p>Hi Dan,<br />
+Just wondering, is there any way we can make this script to function handling membership payments?</p>
+<p>Say, I have a mysql table | id | member | monthly_due | status | rec_date |. Member clicks on the pay now button to pay, and then script upgrades database to record payment made by member.</p>
+<p>Just a thought <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>thanks,<br />
+Bill</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">August 22, 2011 at 10:31 am</em>
+					</div>
+										<p>Hi Bill,</p>
+<p>You can pass any values through to Paypal using the &#8216;custom&#8217; field.  With this you are able to pass the member_id through to paypal using:</p>
+<pre class="brush: php; title: ;" title="">
+// Append querystring with custom field
+$querystring .= &quot;&amp;custom=&quot;.USERID;
+</pre>
+<p>If the response from Paypal is then successful, you can update the membership table for that member_id.</p>
+<p>Hope that helps,</p>
+<p>Dan.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/1eefdfd7e64a300b4a517bec6fae3559?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Bill</h4>
+						<em class="date">September 02, 2011 at 8:46 am</em>
+					</div>
+										<p>Hi Dan,<br />
+Thank you very much for speedy reply. Yes, I will do as what you have suggested and post an update here.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/abe6396d20dc4cd1792a81cbf63a0bb4?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Aash</h4>
+						<em class="date">August 24, 2011 at 1:00 pm</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>Mind blowing article indeed!!</p>
+<p>Really appreciate your efforts in creating such an awesome article on paymentGateway Integration using paypal.</p>
+<p>I am just wondering if you can please also supply the same in classic ASP?</p>
+<p>Thank you!<br />
+Aash</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">August 24, 2011 at 1:41 pm</em>
+					</div>
+										<p>Hi Aash, Thanks for the feedback.</p>
+<p>Unfortunately I cannot provide an example in ASP but Paypal has a range of code samples in various languages, including ASP: <a href="https://merchant.paypal.com/us/cgi-bin/?cmd=_render-content&#038;content_ID=developer/library_code_ipn_code_samples" rel="nofollow">https://merchant.paypal.com/us/cgi-bin/?cmd=_render-content&#038;content_ID=developer/library_code_ipn_code_samples</a></p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/d8ba9bad2d74fe286e62fe969c6ea61f?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Chris</h4>
+						<em class="date">August 31, 2011 at 4:41 pm</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>This is an excellent tutorial I came across while looking for somethin entirely different. I&#8217;ve now bookmarked your site and will do doubt be a frequent visitor. </p>
+<p>Top class mate, well done!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/85e3de1a8839c03bfa8d042700999ccc?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Hengst</h4>
+						<em class="date">September 08, 2011 at 7:13 pm</em>
+					</div>
+										<p>Hi Dan, I&#8217;m working on integrating your script and have it almost working however I&#8217;m having a problem with database being populated with &#8220;payment status pending&#8221;.</p>
+<p>Any ideas?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/85e3de1a8839c03bfa8d042700999ccc?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Hengst</h4>
+						<em class="date">September 08, 2011 at 8:55 pm</em>
+					</div>
+										<p>Nevermind my posts. everything worked. problem was the sandbox. created all new testaccounts and all was fine.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/85e3de1a8839c03bfa8d042700999ccc?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Hengst</h4>
+						<em class="date">September 08, 2011 at 7:41 pm</em>
+					</div>
+										<p>Hello Dan,</p>
+<p>In the sandbox mode the request to paypal and back is ok but several identical database entries are created with payment status &#8220;pending&#8221;.</p>
+<p>Debugging gives me &#8221; Verified Responsedata =  &#8220;. It looks like something is missing. but what?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/12aafd9511fce3632d5ec118fc8eafac?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jeremy</h4>
+						<em class="date">September 15, 2011 at 5:36 pm</em>
+					</div>
+										<p>Nice one! Worked straight off.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/57274c0e3ebdb793a8a998ce18763600?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Anand</h4>
+						<em class="date">September 16, 2011 at 4:44 pm</em>
+					</div>
+										<p>Dan, I have just one line to say &#8220;you are awesome!.&#8221;. I have not seen any article explained this simple and easy to implement as you have done. Great work, it worked like a charm</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/fe0441196dd3d58f76fdd0ec9b478c62?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>denish</h4>
+						<em class="date">September 20, 2011 at 7:27 pm</em>
+					</div>
+										<p>Dan&#8230;&#8230;<br />
+All are cooool here, awessome actly </p>
+<p>but just one issue is that,<br />
+After payment success , my page is not redirecting to success-payment.php </p>
+<p> <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /> </p>
+<p>i am testing on sendbox&#8217;s accounts..</p>
+<p>Any suggestion</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">September 21, 2011 at 9:03 am</em>
+					</div>
+										<p>Hi Denish,</p>
+<p>Try setting your success page to a .htm page rather than a .php page and see if that works.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/fe0441196dd3d58f76fdd0ec9b478c62?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>denish</h4>
+						<em class="date">September 21, 2011 at 7:18 pm</em>
+					</div>
+										<p>thankx for quick reply<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8212;&#8211;<br />
+ <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_sad.gif' alt=':(' class='wp-smiley' /><br />
+Noppp&#8230;.</p>
+<p>.htm, .html &#8230; not working&#8230;<br />
+still page is not redirecting to success page&#8230;</p>
+<p>and one more thing, i was forgot to ask&#8230;<br />
+that my else part (response part) is not working in payments.php&#8230;<br />
+after payment success, i didnt get any mail , not DB insertion of orders etc</p>
+<p>have set mail just after ELSE<br />
+see,<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;-<br />
+}<br />
+else<br />
+{<br />
+//response part<br />
+mail($to&#8230;&#8230;..);<br />
+}<br />
+&#8212;&#8212;&#8212;&#8212;&#8212;-</p>
+<p>but m not getting any mail&#8230;</p>
+<p>plz give suggestion&#8230;</p>
+<p>thank you</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/26925754c17b01ca4273321047c85b2c?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jim</h4>
+						<em class="date">September 27, 2011 at 7:58 pm</em>
+					</div>
+										<p>Hi..great tutorial.  I am trying to allow my customers to pay any amount they want for a service with a minimum..for example, I want the user to pay what they feel like paying with as long as it is at least 5$..can I pass this to my paypal account in a way that won&#8217;t let them change it? thnx!</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">September 28, 2011 at 9:19 am</em>
+					</div>
+										<p>Hi Jim,</p>
+<p>You would simply need to have an input field on your initial form that could be a textbox or a select box, like so:</p>
+<pre class="brush: xml; title: ;" title="">&lt;input name=&quot;amount&quot; type=&quot;text&quot; value=&quot;5.00&quot; /&gt;</pre>
+<p>In your <strong>payments.php</strong> page that builds the <strong>$querystring</strong> you could do a php check to verify that the <strong>amount</strong> variable from the form is greater than or equal to 5.</p>
+<p>You would then need to change <strong>$item_amount = 5.00;</strong> to reflect the user entered amount <strong>$_POST['amount']</strong>.</p>
+<p>Hope that helps.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/26925754c17b01ca4273321047c85b2c?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jim</h4>
+						<em class="date">September 29, 2011 at 12:08 am</em>
+					</div>
+										<p>I sort of snuck up on that same answer after some trial and error&#8230;thanks so much, you rock!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/26925754c17b01ca4273321047c85b2c?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jim</h4>
+						<em class="date">October 02, 2011 at 2:58 am</em>
+					</div>
+										<p>Dan: I wonder if I can ask you another question..I modified the script so that the user inputs their own amount which is then passed onto the payments.php script by setting the amount equal to the $_POST from the form that asked how much they wanted to pay.  It worked great&#8230;just like I wanted it to.  I then made a few other changes and it stopped working so I went back to the file I had just been using and it no longer works! very strange! Any idea of how to figure out what is happening?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/26925754c17b01ca4273321047c85b2c?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Jim</h4>
+						<em class="date">October 02, 2011 at 6:38 pm</em>
+					</div>
+										<p>Dan:</p>
+<p>Is it sometimes not ok to use localhost in order to let the script find the database?  I notice that when I use the actual server name provided by my hosting company, I can connect to my database, but not run the script..and when I use &#8216;localhost&#8217;, I can run the script it doesn&#8217;t see the database..I&#8217;m totally baffled..!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/26ec34fb8cb4d22532da1e55e6ad5dd4?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Murugan</h4>
+						<em class="date">October 03, 2011 at 6:31 am</em>
+					</div>
+										<p>Nice tutorial Dan Lawson</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/032deefe852bc1c557afa9c5dca1d9fc?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Louis</h4>
+						<em class="date">October 12, 2011 at 7:28 pm</em>
+					</div>
+										<p>Hello Dan,</p>
+<p>Such an awesome tutorial, really. I was able to set it up and customize it in less than an hour. Only one thing I haven&#8217;t been able to figure out: Is there any way to disable the registration when a user pays by Credit Card? Currently, he has to enter an E-Mail and password when entering his Credit-Card details, which bothers my client.</p>
+<p>I have a verified business account and E-Mail and I set &#8220;Account Optional&#8221; in the PayPal-settings, yet the user still has to create an account when entering his CC-details. Anything that I missed?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">October 13, 2011 at 9:12 am</em>
+					</div>
+										<p>Hi Louis,</p>
+<p>Thanks for the feedback. PayPal should automatically allow you to pay by your PayPal account or credit card.  This sometimes will only display the login box and no credit card details when there is a PayPal cookie set.  Has the user tried refreshing their browser cache before making a payment?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/824519995aacb6bcec705aec2f1f5a49?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dave</h4>
+						<em class="date">October 14, 2011 at 10:14 pm</em>
+					</div>
+										<p>Hi Dan!</p>
+<p>This is really very helpful. I am new to this and your explanation is awesome.</p>
+<p>I was creating a small online application where users enter their email and the mobiles phone&#8217;s IMEI number.</p>
+<p>I want to know how to pass the email id and the the IMEI number to paypal and once the payment is successful I need to make use of the email and the IMEI number.</p>
+<p>How can I be able to do that. Would you help me?</p>
+<p>Thank you!</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">October 17, 2011 at 8:58 am</em>
+					</div>
+										<p>Hi Dave,</p>
+<p>One option would be to pass the IMEI number into the initial $querystring using the custom parameter:</p>
+<pre class="brush: php; title: ;" title="">
+$querystring .= &quot;custom=&quot;.$imei_number;
+</pre>
+<p>This could then be retrieved after the paypal payment using <strong>$_POST['custom']</strong>.</p>
+<p>The e-mail address can also be retrieved using <strong>$_POST['payer_email']</strong>.</p>
+<p>Alternatively you could pass both the e-mail and the IMEI number into the custom parameter:</p>
+<pre class="brush: php; title: ;" title="">
+$querystring .= &quot;custom=&quot;.$user_email.&quot;---&quot;.$imei_number;
+</pre>
+<p>You could then break this string into an array using:</p>
+<pre class="brush: php; title: ;" title="">
+$custom_array = explode(&quot;---&quot;, $_POST['custom']);
+</pre>
+<p>Hope that helps.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/bd7219db8d4a95a6412a25157643f254?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>bhavesh</h4>
+						<em class="date">October 20, 2011 at 8:08 am</em>
+					</div>
+										<p>Hi Dan!</p>
+<p>This is really very helpful. I am new to this and your explanation is awesome.</p>
+<p>But one problem is that i don&#8217;t know how to use this code in my website please help me.</p>
+<p>Thanks</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/c1ccb66a8e838150144aece5f1a59197?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Adeel Ishfaq</h4>
+						<em class="date">October 25, 2011 at 3:49 am</em>
+					</div>
+										<p>Hi Dan,</p>
+<p>Nice tutorial man, awesome instructions, easy to learn paypal integration for a beginner through your article.</p>
+<p>Thank You</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/8ea344201334e67c4904be2115fddd76?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>prasanth mathew</h4>
+						<em class="date">November 03, 2011 at 1:34 pm</em>
+					</div>
+										<p>Hi Dan,<br />
+Very good tutorial.<br />
+thanks a lot.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/b421ec9523ca94b04ebe9df66de14e89?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>dran</h4>
+						<em class="date">November 06, 2011 at 11:41 pm</em>
+					</div>
+										<p>hi, one question, can I test this scripts on localhost, using WAMP</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">November 07, 2011 at 10:26 am</em>
+					</div>
+										<p>Hi dran,</p>
+<p>I would test the script on a live server rather than WAMP.</p>
+<p>Paypal requires a reachable return URL rather than a local file.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/9a489d0353d2695ec64bfe6b10b34f38?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Amar</h4>
+						<em class="date">November 15, 2011 at 10:53 am</em>
+					</div>
+										<p>Hi Dan,great job.I have integrated paypal.All going well.After payment had done payment-successfull.htm is also showed.But i have a problem that the values are not inserted into database although i have already created a table.I don&#8217;t have any clue why this is happening.Please help me..<br />
+Thanks in advance&#8230;..</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/9a489d0353d2695ec64bfe6b10b34f38?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Amar</h4>
+						<em class="date">November 15, 2011 at 12:42 pm</em>
+					</div>
+										<p>And I have another problem in paypal account Payment status shows Unclaimed.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">November 15, 2011 at 1:02 pm</em>
+					</div>
+										<p>Hi Amar,<br />
+Can you confirm that you are using a verified Paypal Business account and testing on a live server?</p>
+<p>Both these are needed to receive a Verified status.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/9a489d0353d2695ec64bfe6b10b34f38?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Amar</h4>
+						<em class="date">November 16, 2011 at 5:42 am</em>
+					</div>
+										<p>Hi Dan,<br />
+     I am using verified Paypal personal account and testing on localhost.That might creating the problem for status.Is it also creating for the database problem i.e. data not inserted into database?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/9a489d0353d2695ec64bfe6b10b34f38?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Amar</h4>
+						<em class="date">November 16, 2011 at 8:32 am</em>
+					</div>
+										<p>And i have another problem is that when i changed to [value="_cart"] it detects error .I don&#8217;t understand why this is happening.Thanks in advance&#8230;</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">November 16, 2011 at 10:04 am</em>
+					</div>
+										<p>PayPal requires a reachable server for the resquests and responses. Try uploading your website to a live server and try then. Let me know if you have any problems.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/9a489d0353d2695ec64bfe6b10b34f38?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Amar</h4>
+						<em class="date">November 18, 2011 at 5:44 am</em>
+					</div>
+										<p>Thanks DAN,I uploaded in a live server then i got the problems solved.But when i changed to [value="_cart"] it detects error .<br />
+Thanks,thanks&#8230;&#8230;..</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/dd7c28842ac70efbe2095ab2a1c3c542?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>matvinculado</h4>
+						<em class="date">November 24, 2011 at 9:23 am</em>
+					</div>
+										<p>Awesome! <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/02f659cc2f42292a57cd258ef23bf2a0?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>piplin</h4>
+						<em class="date">November 24, 2011 at 4:31 pm</em>
+					</div>
+										<p>So useful!!<br />
+You are my saviour in the issue!!<br />
+Very thanks!! ^_^</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/3cd382cbd4f15f5b90f5b8a2faa70908?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Juan</h4>
+						<em class="date">December 03, 2011 at 6:21 pm</em>
+					</div>
+										<p>Thank you very, very much, this is very helpful, I couldn&#8217;t find a decent tut for my &#8216;paypal&#8217; problem, and this one simply rocks <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_wink.gif' alt=';)' class='wp-smiley' /> </p>
+<p>thnx from Spain</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/dd7c28842ac70efbe2095ab2a1c3c542?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>matvinculado</h4>
+						<em class="date">December 06, 2011 at 4:45 am</em>
+					</div>
+										<p>hi, im working on my integration now, the payment is working well however the newly added row line from database is not being updated.</p>
+<p>please help me:</p>
+<p>			//get transactions number fo id.<br />
+			$transactions=mysql_query(&#8220;select paypal_payment,cashsense_payment from transaction_numbers&#8221;);<br />
+			$trow=mysql_fetch_array($transactions);<br />
+			$pppayment=$trow["paypal_payment"];</p>
+<p>			$tnid=$pppayment + 1;<br />
+			$ppuid=&#8217;PP&#8217;.number_pad($tnid,20);</p>
+<p>			//update webstatus of user<br />
+			$tnudpate = mysql_query(&#8220;UPDATE transaction_numbers SET paypal_payment = &#8216;&#8221;.number_pad($tnid,20).&#8221;&#8216; &#8220;);<br />
+			$newpayments = mysql_query(&#8220;INSERT INTO payments VALUES(&#8221;,&#8217;&#8221; .$ppuid. &#8220;&#8216;,&#8217;no&#8217;,'PAYPAL&#8217;,'&#8221; . $current_date . &#8220;&#8216;,&#8217;&#8221;.$userid.&#8221;&#8216;,&#8217;&#8221;.$_POST['bpbuycredits'].&#8221;&#8216;)&#8221;);</p>
+<p>/ Append querystring with custom field<br />
+			$querystring .= &#8220;&amp;custom=&#8221;.$ppuid;</p>
+<p>//from other on dataupdating after the payment</p>
+<p>// Validate payment (Check unique txnid &amp; correct price)<br />
+						$valid_txnid = check_tn($data['custom']);<br />
+						// PAYMENT VALIDATED &amp; VERIFIED!<br />
+						if($valid_txnid){<br />
+							$orderid = updatePaypalPayments($data);<br />
+							if($orderid){<br />
+								// Payment has been made &amp; successfully inserted into the Database<br />
+								$updateBPPayment = (&#8220;UPDATE payments SET successfulpayment=&#8217;yes&#8217; WHERE paymentid=&#8217;&#8221;.$data['custom'].&#8221;&#8216; &#8220;);</p>
+<p>							}</p>
+<p>hope you can help me, i have my own id&#8217;s not using txn_id. and it will be also a great help if you can give some code how to insert the txn_id before redirecting to paypal.</p>
+<p>thanks <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/dd7c28842ac70efbe2095ab2a1c3c542?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>matvinculado</h4>
+						<em class="date">December 06, 2011 at 8:17 am</em>
+					</div>
+										<p>never mind my last post got it working, honest mistake, forgot mysql_query <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>thanks and very great post <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/d1568be21e7a4d710a0ad2a757aaed81?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Bulbul</h4>
+						<em class="date">December 14, 2011 at 7:14 pm</em>
+					</div>
+										<p>Really great tutorial Dan !!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/824519995aacb6bcec705aec2f1f5a49?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dave</h4>
+						<em class="date">December 15, 2011 at 8:03 pm</em>
+					</div>
+										<p>Hey Dan!</p>
+<p>This one worked like a charm. But the problem is after the payment is made it does not automatically redirect to the payment-success.htm page.</p>
+<p>They should click on go to the store&#8217;s page on the paypal page in order to get redirected.</p>
+<p>Can you help me how to get them redirected automatically?</p>
+<p>Thank you!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/87b282bcd2b4e2265c930e4a21954fea?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>marc</h4>
+						<em class="date">December 20, 2011 at 1:39 pm</em>
+					</div>
+										<p>Hi Dan,<br />
+first of all thank u for ur great tutorial.<br />
+Anyway .. got a problem using sandbox.</p>
+<p>Anything is working &#8211; I mean the transaction is done correclty &#8211; but<br />
+fsockopen returns $errstr =  &#8220;Success&#8221; so the code cannot continue.<br />
+Could be a sandbox problem?</p>
+<p>$fp = fsockopen (&#8216;ssl://www.sandbox.paypal.com&#8217;, 443, $errno, $errstr, 30);	</p>
+<p>	if (!$fp) {<br />
+		// HTTP ERROR<br />
+          mail(&#8216;marc.stefan1968@gmail.com&#8217;, &#8216;fsockopen error&#8217;, $errstr);<br />
+	} else {<br />
+       #continue<br />
+       }</p>
+<p>thank you in advance<br />
+Marc</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">December 20, 2011 at 3:50 pm</em>
+					</div>
+										<p>Hi Marc,</p>
+<p>Is your Paypal IPN code on a live server that can be reached by Paypal (not a localhost testing server) ?</p>
+<p>Thanks</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/87b282bcd2b4e2265c930e4a21954fea?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>marc</h4>
+						<em class="date">December 20, 2011 at 4:43 pm</em>
+					</div>
+										<p>Hi Dan,<br />
+thx for your reply.</p>
+<p>Yes it is. It&#8217;s a regular domain (linux + MySQL under Apache)</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/87b282bcd2b4e2265c930e4a21954fea?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>marc</h4>
+						<em class="date">December 21, 2011 at 11:53 am</em>
+					</div>
+										<p>hi Dan,<br />
+I don&#8217;t want to stress u but I really need to solve this issue.<br />
+The $errno returns 0 and the $errstr returns &#8220;success&#8221;, so apparently the fsockopen works. May I consider as successful the value 0 and Success intead of  if (!$fp) { } ?<br />
+thank you again<br />
+MArc</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/fdeb136045ffc0686647250986d901cb?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Sandy</h4>
+						<em class="date">December 20, 2011 at 2:55 pm</em>
+					</div>
+										<p>Thanks for this tutorial, it is amazing! Just what I was looking for. Once quick questions, do you have to pass over the customer details (address fields etc)? I am looking for a solution that will simply have a &#8220;pay via paypal&#8221; button at the end where the user goes off to paypal and just signs in. It seems pointless to send over the address details when they can be obtained from paypal? I&#8217;m just thinking of convenience for my customers.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">December 20, 2011 at 3:48 pm</em>
+					</div>
+										<p>Hi Sandy,</p>
+<p>No you don&#8217;t need to send the address fields to Paypal. You can get the customers address details from the Paypal $_POST response instead.</p>
+<p>Thanks.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/2f89eb7e4d6533a4ee2e79834bc7340c?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Eric</h4>
+						<em class="date">February 09, 2012 at 8:21 pm</em>
+					</div>
+										<p>How would you code this so that you can insert any additional variables into the database?  There are several other form details that I need to add, but I can&#8217;t get it to work via a $_POST</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">February 10, 2012 at 10:17 am</em>
+					</div>
+										<p>Hi Eric,</p>
+<p>You have two options:</p>
+<p>Either insert the data into the database before the request is sent off to PayPal and set the status to &#8216;paid&#8217; on a successful transaction.</p>
+<p>You could also pass the variable through in the Custom field like so:</p>
+<pre class="brush: php; title: ;" title="">
+$querystring .= &quot;&amp;custom=&quot;.$var1.&quot;-&quot;.$var2.&quot;-&quot;.$var3;
+</pre>
+<p>You can then retrieve these values after payment by:</p>
+<pre class="brush: php; title: ;" title="">
+$custom = array();
+$custom = explode(&quot;-&quot;, $_POST['custom']);
+
+// You can now reference each variable as
+$custom[0];
+</pre>
+<p>Hope this helps.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/824519995aacb6bcec705aec2f1f5a49?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>John Milton</h4>
+						<em class="date">December 21, 2011 at 7:21 am</em>
+					</div>
+										<p>Hi Dan!</p>
+<p>Your tutorial is really amazing. The code works perfectly. Just wanted to know if the customers can be redirected automatically after payment to the success page without click on &#8220;Return to customer site&#8221;.</p>
+<p>Is there a way to accomplish this? If yes, how can I do make the customers automatically redirect?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">December 21, 2011 at 10:00 am</em>
+					</div>
+										<p>Hi John,</p>
+<p>Thanks for the feedback.  There is a way to accomplish the automatic redirect but it has to be set in the Paypal admin interface.</p>
+<p>Here is a quick guide on how to do it: <a href="https://www.paypal.com/cgi-bin/webscr?cmd=p/mer/express_return_summary-outside" rel="nofollow">https://www.paypal.com/cgi-bin/webscr?cmd=p/mer/express_return_summary-outside</a></p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/824519995aacb6bcec705aec2f1f5a49?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>John</h4>
+						<em class="date">December 23, 2011 at 6:23 pm</em>
+					</div>
+										<p>I just tried the auto redirect method Dan. But the auto redirect dont pass the custom variable values back to success page. The success page doesn&#8217;t grab the variables when I switched the auto redirect button &#8220;on&#8221; in paypal options method.</p>
+<p>If I dont use that auto redirect the variables can be grabbed and displayed. So, Can you tell me who can I pass them using the auto redirect method.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">January 03, 2012 at 10:12 am</em>
+					</div>
+										<p>Hi John,</p>
+<p>When the success page is live you will need to use the $_REQUEST array to retrieve your data as Paypal changes the method to GET rather than POST.</p>
+<p>Try echoing out:</p>
+<pre class="brush: php; title: ;" title="">
+echo &quot;&lt;pre&gt;&quot;.var_dump($_REQUEST).&quot;&lt;/pre&gt;&quot;;
+</pre>
+<p>on your success page to see the variables.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/7bb287d6432f2d38863a617eb00a12cd?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>dheeraj</h4>
+						<em class="date">December 21, 2011 at 6:04 pm</em>
+					</div>
+										<p>Hi best article. This is very use full.<br />
+Will you suggest about the tax and other charges in paypal.</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">January 03, 2012 at 10:13 am</em>
+					</div>
+										<p>Hi dheeraj,</p>
+<p>You can view the full list of variables to be sent to Paypal here:</p>
+<p><a href="https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&#038;content_ID=developer/e_howto_html_IPNandPDTVariables#id091EB04C0HS__id0913D0J01O8" rel="nofollow">https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&#038;content_ID=developer/e_howto_html_IPNandPDTVariables#id091EB04C0HS__id0913D0J01O8</a></p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/8a67efb08c277ac050df7595c2156c16?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Modular</h4>
+						<em class="date">December 23, 2011 at 2:08 am</em>
+					</div>
+										<p>Awesome tutorial &#8211; brilliantly elaborate and extremely practical code without any error (testing on local server, Xampp at the moment &#8211; hopefully on live server would be fine.) Your post made my day and save lots of time. Keep up your excellent work. </p>
+<p>Merry Xmas and Happy New Year 2012, everyone <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/077ea3fbc41b0a9ce7b6ec75f4afa229?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>rich</h4>
+						<em class="date">December 29, 2011 at 2:49 am</em>
+					</div>
+										<p>hello mate is there any way possible to pass the whole shopping cart to paypal, got something working but its only passing one item to paypal</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">January 03, 2012 at 10:16 am</em>
+					</div>
+										<p>Hi Rich,</p>
+<p>Yes you can pass the whole shopping cart through to Paypal.</p>
+<p>Look <a href="https://cms.paypal.com/us/cgi-bin/?cmd=_render-content&amp;content_ID=developer/e_howto_html_IPNandPDTVariables#id091EB04C0HS__id0913D0J01O8" rel="nofollow">here</a> for the &#8216;item_name x&#8217; variable.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/f9cb516d56f5f0dfb9800cd872141038?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>kiko</h4>
+						<em class="date">January 13, 2012 at 9:43 am</em>
+					</div>
+										<p>Hi,</p>
+<p>What if I am going to use paypal.com instead of sandbox.paypal.com? I want to integrate the real paypal into my website. Thanks in advance!</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">January 13, 2012 at 11:43 am</em>
+					</div>
+										<p>Hi,</p>
+<p>You would simply need to remove &#8216;sandbox&#8217; from the URL in payments.php</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/647713235780806a7c2db7fd7ba1c623?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>param</h4>
+						<em class="date">January 14, 2012 at 6:34 am</em>
+					</div>
+										<p>Thanks a lot man.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/1a1f6967c8a7af3ddc94340aaf7301ea?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Sandy</h4>
+						<em class="date">January 14, 2012 at 4:10 pm</em>
+					</div>
+										<p>Hi Don,<br />
+Nice Tutorial, I really appreciate. I Have a bit problem. This error is appear wen we click on Submit payment button. Do you Have any idea ?<br />
+Thanks for Suggestion.<br />
+Warning: Cannot modify header information &#8211; headers already sent by (output started at /home/unleashs/public_html/payment/payments.php:1) in /home/unleashs/public_html/payment/payments.php on line 51</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">January 16, 2012 at 10:08 am</em>
+					</div>
+										<p>Hi Shandy,</p>
+<p>It sounds like you have a debug &#8216;echo&#8217; somewhere in your code. Try debugging each line until you find the problem echo.</p>
+<p>Thanks</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/7c3ce4327b2397e3bec09b0e731aa761?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Unni</h4>
+						<em class="date">January 17, 2012 at 8:30 pm</em>
+					</div>
+										<p>Hello Dan&#8230;<br />
+Just went through your tutorial. And its very nice and clear. Thanks. Now I am about to try it in real.I have a doubt.1&gt; If i select Personal account then is it possible for my customers to pay via debit card? or is Premier account must for this?<br />
+2&gt; Is there any pros or cons between them?<br />
+3&gt;If i am setting up a small buy option without much buyers and no much huge transactions then which should i opt for.</p>
+<p>I Googled it up but it totally confused me. <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_sad.gif' alt=':-(' class='wp-smiley' />  It would be very helpful if you could clear this thing. <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':-)' class='wp-smiley' /><br />
+Thank you Dan&#8230;</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">January 18, 2012 at 10:41 am</em>
+					</div>
+										<p>Hi Unni,</p>
+<p>Thank you for your comments. To use PayPal&#8217;s IPN service you must either have a Premier or Business account.  These are free to set-up but charge a small percentage fee per transaction.</p>
+<p>Hope that helped.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/76359efce695e527b8c6effd6f62fa3c?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>John</h4>
+						<em class="date">January 24, 2012 at 3:58 am</em>
+					</div>
+										<p>Thank you for this useful information. It helps a lot.</p>
+<p>^_^</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/ec58e55794983f05a510cad4d4c874a7?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Mint</h4>
+						<em class="date">January 28, 2012 at 4:31 pm</em>
+					</div>
+										<p>Hello Dan!</p>
+<p>Excellent work, just like what i&#8217;ve been looking for, I need to do up a paypal integration with my school project, and i found this! <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_biggrin.gif' alt=':D' class='wp-smiley' /> </p>
+<p>Anyway, really appreciate this effort, and it works for me, I tried in sandbox mode, all the way until the payment is made, the redirection are good,but it did not update my database, did not insert into my payments table and it did not notify me on the page when the payments are made, do you have any idea where is the portion i should look for to edit the codes for notifications to the user when they made a payment?</p>
+<p>Thanks in advance <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+<p>Mint</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/c88c29c1a9df642bc49afd9c044fd305?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>edgar</h4>
+						<em class="date">February 01, 2012 at 1:22 am</em>
+					</div>
+										<p>Great article about paypal integration. Thanks for this article!!. <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/2d148c13ee83f8bdc9a923edb3fd5989?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Sebosa</h4>
+						<em class="date">February 01, 2012 at 8:17 pm</em>
+					</div>
+										<p>Hi<br />
+Your tutorial is really very interesting.I want a help..i have created a subscribe button from paypal account and placed it in my website.I would like to use this button to subscribe and pay the amount by the user and return back to my website with an id because i want to save a flag status if he /she pay to my DB.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/57ab8b32dd189d0a71bbd35f2a070e0e?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Çağlar</h4>
+						<em class="date">February 01, 2012 at 10:12 pm</em>
+					</div>
+										<p>Very usefull article, thanks for writing it ^^</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/28022cd0277a21a751cc7f55ad9bb3bd?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Sergio</h4>
+						<em class="date">February 12, 2012 at 2:52 am</em>
+					</div>
+										<p>For those who wish to submit multiple items to paypal cart, this article could be a good friend. <a href="https://www.paypal.com/cgi-bin/webscr?cmd=_pdn_howto_checkout_outside" rel="nofollow">https://www.paypal.com/cgi-bin/webscr?cmd=_pdn_howto_checkout_outside</a></p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/5a43c57f545c1f091c6fac296eed17a7?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Sergio Felix</h4>
+						<em class="date">February 17, 2012 at 7:47 am</em>
+					</div>
+										<p>Hey Dan,</p>
+<p>Just wanted to thank you for this amazing resource my friend.</p>
+<p>By far the best article I&#8217;ve seen on integrating PayPal with PHP&amp;MySQL, hope I can make it work now! <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_wink.gif' alt=';-)' class='wp-smiley' /> </p>
+<p>Sergio</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/0d864bddaaaabbba2464f7e7f586d6ef?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Rob</h4>
+						<em class="date">February 20, 2012 at 9:32 pm</em>
+					</div>
+										<p>Hi Dan, brilliant guide !!</p>
+<p>Could I ask you or anyone of how I can get the &#8220;custom&#8221; field data back from when a buyer clicks (cancel) to bring them back to my site (cancel_return). The data isn&#8217;t in the POST data. ($_REQUEST['custom'])&#8230;?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/a2d15d3b5554b8132cb7ecc599e3dd76?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Paul Angelo Silvestre</h4>
+						<em class="date">February 26, 2012 at 11:54 am</em>
+					</div>
+										<p>Hi Dan! great tutorial! i just need something.. i ran this code perfectly and it worked perfectly.. but the thing is.. after a successful payment, it will go back to my website.. but, it doesnt update a value from my website.. like for example.. in my website i got 0 points.. and to have a point/s i need to pay like $3 for 5 points.. what i would like to do is.. after a successful payment.. i will be redirected to my site having the 5 points.. thanks!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/2dc996d92ad567bdbbde5c3e10c08665?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Lakshman</h4>
+						<em class="date">March 01, 2012 at 4:06 pm</em>
+					</div>
+										<p>Hii..</p>
+<p>The article is really awesome, thanks for posting. very useful</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/404107998f3af1fe54fc6d9a904b2438?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Ian.J.Gough</h4>
+						<em class="date">March 01, 2012 at 4:35 pm</em>
+					</div>
+										<p>Magic!<br />
+Works like a dream and is very easy to modify and understand.  Thank you for writing and sharing your code.<br />
+Ian</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/07645a7ab4d960ae419b8c1b93e5af98?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Likhit</h4>
+						<em class="date">March 08, 2012 at 12:16 pm</em>
+					</div>
+										<p>Hi Dan Lawson,</p>
+<p>Thanks for this great article,<br />
+I am working on a php project where i need to integrate paypal. I am trying out your code for the same. But I am stuck at the request line: if (!isset($_POST["txn_id"]) &amp;&amp; !isset($_POST["txn_type"])), can you please tell me where are you setting &#8220;txn_id&#8221; and &#8220;txn_type&#8221;. Please reply at the earliest, need to role out on production at the earliest.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/43d1510855f9c6d4fd0b0ec0b934b713?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Ganesh</h4>
+						<em class="date">March 16, 2012 at 12:25 pm</em>
+					</div>
+										<p>Thank you dude</p>
+<p>This document is very useful <img src='http://www.evoluted.net/thinktank/wp-includes/images/smilies/icon_smile.gif' alt=':)' class='wp-smiley' /> </p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/f51b1da10a8e6aad48ad97f46836bf15?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Daniel</h4>
+						<em class="date">March 30, 2012 at 8:16 pm</em>
+					</div>
+										<p>Hi, Is there any way using this script to output the item purchased (i&#8217;m using a buy now button with options like 1 month, 2 moths 3months)</p>
+<p>Thanks</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/642e4f608d7b424f1b71d20696d9b5ef?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Geoff</h4>
+						<em class="date">April 04, 2012 at 12:22 pm</em>
+					</div>
+										<p>Total quality. Thanks.</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/380cc852c0572eaab137d2b3b9c1cf40?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Andy</h4>
+						<em class="date">April 19, 2012 at 5:07 am</em>
+					</div>
+										<p>I just wanted to thank you from the bottom of my heart. I appreaciate the time and effort you put into this.</p>
+<p>With the help of your tutorial, a good php book and the internet in general I was able to tweak your script to fit my needs as well as furthering my php education a great deal.</p>
+<p>Again&#8230; Thank You!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/d26b1d8203d81220555d478f1812be84?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Stephen &#8211; The Review Site Guy</h4>
+						<em class="date">April 22, 2012 at 10:32 am</em>
+					</div>
+										<p>unless my understanding of PHP is off, line 21 of functions.php references a non-existent mysql function:</p>
+<p>    if (mysql_numrows($sql) != 0) {</p>
+<p>should be mysql_num_rows, right?</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/8ba17bb73724a71f939eaf9c103cf576?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Craig Hopson</h4>
+						<em class="date">April 23, 2012 at 8:37 pm</em>
+					</div>
+										<p>Works, simple!!!!</p>
+<p>Thank you so much for taking the time</p>
+														</div>
+			</div>
+			</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://0.gravatar.com/avatar/47f21b5c06c362444bb84b082c145b27?s=58&amp;d=http%3A%2F%2F0.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Kevin</h4>
+						<em class="date">April 25, 2012 at 8:41 am</em>
+					</div>
+										<p>Hello,</p>
+<p>Thanks a lot for taking the time to write &amp; share this, it works for me just like everyone else.</p>
+<p>The only issue is.. I really don&#8217;t know anything about php and I have no idea how to change the currency from £ to €, could you please tell me how this is done?</p>
+														</div>
+			</div>
+	<ul class='children'>
+	
+	<li>
+				<div class="comment admin-block">
+			<div class="comment-block">
+				<div class="alignleft admin-image">
+						<img alt='' src='http://1.gravatar.com/avatar/3729614ac246a85e4e29500ca53862ee?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />											<span class="admin">team</span>
+									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Dan Lawson</h4>
+						<em class="date">April 25, 2012 at 9:02 am</em>
+					</div>
+										<p>Hi Kevin,</p>
+<p>Thanks for reading the post. To change from £ to Euros you will need to change the currency_code value in the form to EUR:</p>
+<pre class="brush: plain; title: ;" title="">&lt;input name=&quot;currency_code&quot; type=&quot;hidden&quot; value=&quot;EUR&quot; /&gt;</pre>
+<p>Simples!</p>
+														</div>
+			</div>
+			</div>
+		</li>
+	</ul>
+		</div>
+		</li>
+		
+	<li>
+				<div class="comment ">
+			<div class="comment-block">
+				<div class="alignleft ">
+						<img alt='' src='http://1.gravatar.com/avatar/f51b1da10a8e6aad48ad97f46836bf15?s=58&amp;d=http%3A%2F%2F1.gravatar.com%2Favatar%2Fad516503a11cd5ca435acc9bb6523536%3Fs%3D58&amp;r=G' class='avatar avatar-58 photo' height='58' width='58' />									</div>
+				<div class="text-holder">
+					<div class="meta">
+						<h4>Daniel</h4>
+						<em class="date">May 03, 2012 at 2:28 pm</em>
+					</div>
+										<p>Update: remove the &#8216;/p/&#8217;</p>
+<p>$root = realpath($_SERVER["DOCUMENT_ROOT"]);<br />
+include “$root/functions.php”;</p>
+														</div>
+			</div>
+			</div>
+		</li>
+			</ol>
+    
+        
+		<div class="navigation">
+			<div class="next"></div>
+			<div class="prev"></div>
+		</div>
+	</div>
+	
+	 	
+	
+	</div>
+			</div>
+	
+	<div id="sidebar">
+	<div class="box design-inspiration">
+		<div class="widget widget_nav_menu"><div class="menu-main-menu-container"><ul id="menu-main-menu" class="menu"><li id="menu-item-43" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-home menu-item-43"><a href="http://www.evoluted.net/thinktank/">HOME</a></li>
+<li id="menu-item-38" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-38"><a href="http://www.evoluted.net/thinktank/categories/web-design">Web Design</a></li>
+<li id="menu-item-37" class="menu-item menu-item-type-taxonomy menu-item-object-category current-post-ancestor active current-post-parent menu-item-37"><a href="http://www.evoluted.net/thinktank/categories/web-development">Web Development</a></li>
+<li id="menu-item-213" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-213"><a href="http://www.evoluted.net/thinktank/categories/copywriting">Copywriting</a></li>
+<li id="menu-item-214" class="menu-item menu-item-type-taxonomy menu-item-object-category menu-item-214"><a href="http://www.evoluted.net/thinktank/categories/search-engine-optimisation">Search Engines</a></li>
+<li id="menu-item-212" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-212"><a href="http://www.evoluted.net/thinktank/about">About</a></li>
+</ul></div></div><div class="widget widget_search"><form method="get" class="search-form" id="searchform" action="http://www.evoluted.net/thinktank" >
+	<fieldset>
+		<input type="text" class="text" name="s" value="Enter Search" />
+		<input type="submit" value="" class="submit"/>
+	</fieldset>
+</form>
+</div>	</div>
+			<div class="box recent-posts">		<div class="heading"><h3>RECENT POSTS</h3></div>		<ul>
+				<li><a href="http://www.evoluted.net/thinktank/copywriting/14-types-of-social-media-post-that-just-work" title="14 types of social media post that just work">14 types of social media post that just work</a></li>
+				<li><a href="http://www.evoluted.net/thinktank/web-development/tutorial-create-facebook-timeline-app" title="Tutorial: Creating a Facebook timeline app">Tutorial: Creating a Facebook timeline app</a></li>
+				<li><a href="http://www.evoluted.net/thinktank/copywriting/digital-copywriting-trends-for-2012" title="Digital copywriting trends for 2012">Digital copywriting trends for 2012</a></li>
+				<li><a href="http://www.evoluted.net/thinktank/web-design/ultralight-ui-kit-free-psd" title="UltraLight UI Kit Free PSD">UltraLight UI Kit Free PSD</a></li>
+				<li><a href="http://www.evoluted.net/thinktank/search-engine-optimisation/canonical-tag-duplicate-content" title="Using the canonical tag to deal with duplicate content">Using the canonical tag to deal with duplicate content</a></li>
+				<li><a href="http://www.evoluted.net/thinktank/copywriting/is-your-copywriting-humble-enough" title="Is your copywriting humble enough?">Is your copywriting humble enough?</a></li>
+				</ul>
+		</div><div class="box widget_text">			<div class="textwidget"><div class="box sidebar-about">
+<div class="heading">
+<h3>A LITTLE BIT ABOUT US</h3>
+</div>
+<div class="details">
+<a href="http://www.evoluted.net" class="about-logo newWindow" title="Visit Evoluted"><img src="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/images/about-evoluted-logo.png" alt="Evoluted Wed Design Sheffield" /></a>
+<p>Think Tank is designed and produced by the staff at Evoluted, a Sheffield based digital agency.</p>
+<a href="http://www.evoluted.net" class="visit-evoluted newWindow" title="Visit Evoluted"><img src="http://www.evoluted.net/thinktank/wp-content/themes/thewebdesigntt/images/btn-visit-evoluted3.png" alt="Evoluted Wed Design Sheffield" /></a>
+</div>
+</div></div>
+		</div></div>
+</div>
+
+			</div>
+			<span class="decor">&nbsp;</span>
+		</div>
+	</div>
+	<div id="footer">
+		<div class="footer-holder">
+			<div class="footer-frame">
+				<div id="nemos-door">
+        	<div id="nemo"></div>
+        </div>
+        <div class="info">
+					<div class="info-holder">
+						<p>&copy; Evoluted New Media 2012</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shCore.js?ver=2.1.364'></script>
+<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shBrushXml.js?ver=2.1.364'></script>
+<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shBrushPhp.js?ver=2.1.364'></script>
+<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shBrushSql.js?ver=2.1.364'></script>
+<script type='text/javascript' src='http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/shBrushPlain.js?ver=2.1.364'></script>
+<script type='text/javascript'>
+	(function(){
+		var corecss = document.createElement('link');
+		var themecss = document.createElement('link');
+		var corecssurl = "http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shCore.css?ver=2.1.364";
+		if ( corecss.setAttribute ) {
+				corecss.setAttribute( "rel", "stylesheet" );
+				corecss.setAttribute( "type", "text/css" );
+				corecss.setAttribute( "href", corecssurl );
+		} else {
+				corecss.rel = "stylesheet";
+				corecss.href = corecssurl;
+		}
+		document.getElementsByTagName("head")[0].insertBefore( corecss, document.getElementById("syntaxhighlighteranchor") );
+		var themecssurl = "http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/styles/shThemeDefault.css?ver=2.1.364";
+		if ( themecss.setAttribute ) {
+				themecss.setAttribute( "rel", "stylesheet" );
+				themecss.setAttribute( "type", "text/css" );
+				themecss.setAttribute( "href", themecssurl );
+		} else {
+				themecss.rel = "stylesheet";
+				themecss.href = themecssurl;
+		}
+		//document.getElementById("syntaxhighlighteranchor").appendChild(themecss);
+		document.getElementsByTagName("head")[0].insertBefore( themecss, document.getElementById("syntaxhighlighteranchor") );
+	})();
+	SyntaxHighlighter.config.clipboardSwf = 'http://www.evoluted.net/thinktank/wp-content/plugins/syntaxhighlighter/syntaxhighlighter2/scripts/clipboard.swf';
+	SyntaxHighlighter.config.strings.expandSource = 'show source';
+	SyntaxHighlighter.config.strings.viewSource = 'view source';
+	SyntaxHighlighter.config.strings.copyToClipboard = 'copy to clipboard';
+	SyntaxHighlighter.config.strings.copyToClipboardConfirmation = 'The code is in your clipboard now';
+	SyntaxHighlighter.config.strings.print = 'print';
+	SyntaxHighlighter.config.strings.help = '?';
+	SyntaxHighlighter.config.strings.alert = 'SyntaxHighlighter\n\n';
+	SyntaxHighlighter.config.strings.noBrush = 'Can\'t find brush for: ';
+	SyntaxHighlighter.config.strings.brushNotHtmlScript = 'Brush wasn\'t configured for html-script option: ';
+	SyntaxHighlighter.defaults['pad-line-numbers'] = false;
+	SyntaxHighlighter.all();
+</script>
+  <script type="text/javascript">
+	Cufon.now();
+	
+	jQuery(document).ready(function() {	
+		/* load our fancybox instance */
+		jQuery("a.fancybox").fancybox({
+			'titlePosition'	: 'inside',
+      'transitionIn'	: 'elastic',
+      'transitionOut'	: 'elastic'
+		});		
+	});
+	</script>
+</body>
+</html>
+<!-- Dynamic page generated in 0.389 seconds. -->
+<!-- Cached page generated by WP-Super-Cache on 2012-05-14 20:25:48 -->
+<!-- super cache -->
